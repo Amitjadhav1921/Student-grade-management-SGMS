@@ -1,88 +1,50 @@
-# Student-grade-management
-# Initialising dictionary
-student_grade = {}
-# Add a new student
-def add_student(name, grade):
-    
-    student_grade[name] = grade 
-    print(f"Added {name} with a grade of {grade}")
+Overview
+The Student Grade Management System is a simple Python console application to manage student grades. It allows users to add, update, delete, and view student records efficiently through a menu-driven interface. The application is ideal for understanding CRUD operations and basic Python programming.
 
-# Update a student
-def update_student(name, grade):
-    
-    if name in student_grade:
-        
-        student_grade[name] = grade
-        
-        print(f"The grade for {name} has been updated to {grade}")
-    else:
-        print(f"{name} is not found!")
-# Delete a student
-def delete_student(name):
-    
-    if name in student_grade:
-        del student_grade[name]
-        print(f"{name} has been successfully deleted")
-    else:
-        print(f"{name} is not found!")
+Features
+Add a new student with a grade
 
-# View all students
-def display_all_students():
-    if student_grade:
-        print("\n--- Current Student Grades ---")
-        for name, grade in student_grade.items():
-            print(f"{name}: {grade}")
-        print("------------------------------")
-    else:
-        print("No students found/added.")
+Update an existing student's grade
 
-def main():
-    while True:
-        print('\n--- Student Grade Management System ---')
-        print("1. Add Student")
-        print("2. Update Student Grade")
-        print("3. Delete Student")
-        print("4. View All Students")
-        print("5. Exit")
+Delete a student from records
 
-        try:
-            choice = input("Enter your choice (1-5): ")
-            if not choice.isdigit():
-                raise ValueError
-            choice = int(choice)
-        except ValueError:
-            print("Invalid input. Please enter a number from 1 to 5.")
-            continue
+View all student names and grades
 
-        if choice == 1:
-            name = input("Enter student name: ")
-            
-            try:
-                grade = int(input("Enter student grade: "))
-                add_student(name, grade)
-            except ValueError:
-                print("Invalid grade. Please enter a whole number.")
-        
-        elif choice == 2:
-            name = input("Enter student name to update: ")
-            try:
-                grade = int(input("Enter new student grade: "))
-                update_student(name, grade)
-            except ValueError:
-                print("Invalid grade. Please enter a whole number.")
+Robust input validation and friendly error messages
 
-        elif choice == 3:
-            name = input("Enter student name to delete: ")
-            delete_student(name)
+Technologies/Tools Used
+Programming Language: Python 3.x
 
-        elif choice == 4:
-            display_all_students()
+Platform: Command-line interface (console/terminal)
 
-        elif choice == 5:
-            print("Closing the program...")
-            break
+Tools: Any text editor (VS Code, Sublime, Notepad++) and terminal
 
-        else:
-            print("Invalid choice. Please enter a number between 1 and 5.")
-if __name__ == "__main__":
-    main()
+Installation & Run Instructions
+Install Python 3:
+Download and install from python.org if not already installed.
+
+Open Terminal:
+
+Navigate (using cd command) to the folder containing student_grade.py.
+
+Run the Program:
+
+text
+python student_grade.py
+Instructions for Testing
+On running the program, you’ll see a menu with options to add, update, delete, or view students.
+
+Test each menu option:
+
+Add student: Enter a new name and integer grade.
+
+Update student: Enter existing name and new grade.
+
+Delete student: Enter the name to remove.
+
+View all: See the current list of students and their grades.
+
+Try entering invalid inputs (letters for grades, wrong menu number) and see the error handling in action.
+
+Use the Exit menu option to close the program safely.
+
