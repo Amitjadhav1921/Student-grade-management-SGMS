@@ -1,7 +1,6 @@
 # Student-grade-management
 # Initialising dictionary
 student_grade = {}
-
 # Add a new student
 def add_student(name, grade):
     
@@ -18,7 +17,6 @@ def update_student(name, grade):
         print(f"The grade for {name} has been updated to {grade}")
     else:
         print(f"{name} is not found!")
-
 # Delete a student
 def delete_student(name):
     
@@ -86,6 +84,5 @@ def main():
 
         else:
             print("Invalid choice. Please enter a number between 1 and 5.")
-
 if __name__ == "__main__":
     main()
